@@ -65,10 +65,11 @@ with webdriver.Chrome(executable_path=directory) as chromedriver:
 
             try:
                 # use xpath to get number of rows and columns
-                # row = chromedriver.find_element_by_xpath('//*[@id="table_id"]/tbody/tr/td/span')
-                table_xpath = chromedriver.find_elements_by_xpath('//*[@id="timelineId"]/div[1]/table/tbody/tr')
-                print(row)
-                print(table_xpath.text)
+                # row = chromedriver.find_elements_by_xpath('//*[@id="table_id"]/tbody/tr/td/span')
+                # table_xpath = chromedriver.find_elements_by_xpath('//*[@id="timelineId"]/div[1]/table/tbody/tr')
+                # for i in row:
+                #     print(row[0].text)
+                # print(table_xpath.text)
                 # locations = chromedriver.find_elements_by_class_name('timeline__event-table__cell--heading') works
                 # locations = chromedriver.find_elements_by_tag_name('tbody') 
                 # print(len(locations))
@@ -76,14 +77,19 @@ with webdriver.Chrome(executable_path=directory) as chromedriver:
                 # timeline__event-table__cell timeline__event-table__cell--heading
                 # timeline__event-table__cell timeline__event-table__cell--heading
                 # all_rows = chromedriver.find_elements_by_class_name('timeline__event-table__row') works
-                # all_rows = chromedriver.find_elements_by_class_name('table__body')
+                all_tables = chromedriver.find_elements_by_class_name('table__wrapper')
                 locations = chromedriver.find_elements_by_class_name('timeline__event-table__cell--heading') 
+                print(len(all_tables))
+                # second_row = chromedriver.find_elements_by_xpath('//*[@id="timelineId"]')
+                # print(second_row[0].text)
                 # print(len(all_rows))  
                 # print(len(all_rows))
-                for i in locations:
+                for i in all_tables:
                     # print(i+"th loop")
-                    # location = i.find_elements_by_class_name('timeline__event-table__cell--heading') 
-                    print(i.text)
+                    print("--------------start---------")
+                    location = i.find_elements_by_class_name('timeline__event-table__cell--heading')
+                    print(location.gettext)
+                    print('----------stop------------')
                     # print(i[0].text)
                     # dates = chromedriver.find_elements_by_xpath('//*[@id="table_id"]/tbody/tr/td/span')
                     # dates = all_rows.find_elements_by_class_name('timeline__event-table__cell--time')
