@@ -1,0 +1,44 @@
+"container_tracking": {
+    "TGBU8925810": [
+        {
+            "location": "Dnyaneshwar Empty Park Depot 2 (Jawaharlal Nehru, MAHARASHTRA, India)",
+            "events": [
+                {
+                    "date_and_time": "03-Dec-20 08:30",
+                    "activity": "Gate out Empty",
+                    "status": "done"
+                }
+            ]
+        },
+        {
+            "location": "Jawaharlal Nehru NSICT DPW (Jawaharlal Nehru, MAHARASHTRA, India)",
+            "events": [
+                {
+                    "date_and_time": "12-Dec-20 22:18",
+                    "activity": "Gate in",
+                    "status": "done"
+                },
+                {
+                    "date_and_time": "17-Dec-20 19:48",
+                    "activity": "Load on MARATHOPOLIS",
+                    "status": "done"
+                }
+            ]
+        },
+        {
+            "location": "Benin Terminal (Cotonou, Benin)",
+            "events": [
+                {
+                    "date_and_time": "28-Jan-21 12:30",
+                    "activity": "Discharge",
+                    "status": "done"
+                },
+                {
+                    "date_and_time": "28-Jan-21",
+                    "activity": "Gate out",
+                    "status": "pending"
+                }
+            ]
+        }
+    ]
+}
