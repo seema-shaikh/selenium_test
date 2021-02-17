@@ -22,7 +22,7 @@ def create_folder():
 directory=create_folder()
 
 with webdriver.Chrome(executable_path=directory) as chromedriver:
-
+    
     try:
     
         # chromedriver = None
@@ -88,7 +88,7 @@ with webdriver.Chrome(executable_path=directory) as chromedriver:
                     # print(i+"th loop")
                     print("--------------start---------")
                     location = i.find_elements_by_class_name('timeline__event-table__cell--heading')
-                    print(location.gettext)
+                    # print(location.get_attribute('data-th'))
                     print('----------stop------------')
                     # print(i[0].text)
                     # dates = chromedriver.find_elements_by_xpath('//*[@id="table_id"]/tbody/tr/td/span')
