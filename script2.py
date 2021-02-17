@@ -62,11 +62,16 @@ with webdriver.Chrome(executable_path=directory) as chromedriver:
         chromedriver.find_element_by_xpath('//*[@id="table_id"]/tbody/tr/td[6]/a').click()
         table_id = chromedriver.find_element(By.ID, 'timelineId')
         rows = table_id.find_elements(By.TAG_NAME, 'table')
+
+        out=[]
         for row in rows:
             print('start')
             
             col = row.find_elements(By.TAG_NAME,"tr")
-            location = col[0].text        
+            location = col[0].text     
+            inside = {}
+    
+            inside['location'] = location   
             # print(col[0].text)
             # print('location')
             # for j in range(1,len(col))
@@ -88,6 +93,12 @@ with webdriver.Chrome(executable_path=directory) as chromedriver:
                 print("activity")
                 for l in activity:
                     print(l.text) 
+
+
+                inside['events'] = [{'date_and_time':k.text,'activity':l.text}]
+                
+            out.append(inside.copy())
+            dictionary.update(out)
                 # print(len(activity))
                 # datetimelist.append(datetime[0].text)
             # print(datetimelist)
